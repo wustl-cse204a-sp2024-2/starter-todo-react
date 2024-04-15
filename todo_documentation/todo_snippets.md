@@ -100,8 +100,7 @@ const remainingTodos = todos.filter((todo) => {
 useEffect(() => {
 
     //ajax stuff
-    let newTodos = [result.data, ...todos];
-    setTodos(newTodos);
+    setTodos(resultData); //resultData needs to be the array returned by the API
 
 }, []);
 ```
