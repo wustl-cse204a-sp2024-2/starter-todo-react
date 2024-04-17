@@ -51,16 +51,10 @@ return (
 ## Sorting Arrays
 - Arrays can be sorted using the `.sort()` method, documented [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) and [here](https://www.w3schools.com/jsref/jsref_sort.asp)
 - The `.sort()` method can be passed a function which is used to compare each item in the array, and returns whether or not a certain item should be sorted before another item.
-  - Sorting ascending by a number property
+  - Sorting ascending by a timestamp property
   ```javascript
   todos.sort(function (a, b) {
-    return parseFloat(a.created) - parseFloat(b.created);
-  });
-  ```
-  - Sorting descending by a number property
-  ```javascript
-  todos.sort(function (a, b) {
-    return parseFloat(b.created) - parseFloat(a.created);
+    return new Date(a.created_at) - new Date(b.created_at);
   });
   ```
   - Sorting alphabetically using `localCompare` (documented [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare) and [here](https://www.w3schools.com/jsref/jsref_localecompare.asp))
